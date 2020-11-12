@@ -1,0 +1,43 @@
+@startuml Facade Pattern
+
+package xxx <<Rectangle>> {
+  interface Shape {
+    void draw()
+  }
+
+  Shape <-- Circle : implement
+  class Circle {
+    void draw()
+  }
+
+  Shape <-- Rectangle : implement
+  class Rectangle {
+    void draw()
+  }
+
+  Shape <-- Square : implement
+  class Square {
+    void draw()
+  }
+}
+
+xxx <- ShapeMaker : make
+
+class ShapeMaker {
+  Circle circle
+  Rectangle rectangle
+  Square square
+
+  ShapeMaker()
+  void drawCircle()
+  void drawRectangle()
+  void drawSquare()
+}
+
+ShapeMaker <-- FacadePatternDemo : ask
+
+class FacadePatternDemo {
+  void main()
+}
+
+@enduml

@@ -12,6 +12,9 @@ namespace DesignPatterns
             Console.WriteLine($"Observer Pattern End ------------\n");
 
             // 门面(外观)模式
+            Console.WriteLine($"Facade Pattern Start ------------");
+            FacadePattern.FacadePatternDemo.Run();
+            Console.WriteLine($"Facade Pattern End ------------\n");
         }
     }
 }
