@@ -1,0 +1,42 @@
+@startuml ObserverPattern
+
+class ObserverPatternDemo {
+  void main()
+}
+
+ObserverPatternDemo --> xxx : asks
+
+package xxx <<Rectangle>> {
+
+  abstract Observer {
+    Subject subject
+    void update()
+  }
+
+  Observer <-- BinaryObserver : extend
+
+  class BinaryObserver{
+
+  }
+
+  Observer <-- OctalObserver : extend
+  class OctalObserver{
+
+  }
+
+  Observer <- Subject : uses
+
+  class Subject {
+    List<Observer> observers
+    int state
+    
+    int getState()
+    void setState()
+    void attach()
+    void notifyAllObservers()
+  }
+
+}
+
+
+@enduml
