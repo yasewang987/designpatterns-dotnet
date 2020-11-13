@@ -1,0 +1,35 @@
+@startuml Factory Pattern
+
+package xxx <<rectangle>> {
+  interface Shape {
+    void draw()
+  }
+
+  Shape <-- Circle : implement
+
+  class Circle {
+    void draw()
+  }
+
+  Shape <-- Rectangle : implement
+  class Rectangle {
+    void draw()
+  }
+
+  Shape <-- Square : implement
+  class Square {
+    void draw()
+  }
+}
+
+xxx <- ShapeFactory : create
+class ShapeFactory {
+    Shape getShape()
+}
+
+ShapeFactory <-- FactoryPatternDemo: ask
+class FactoryPatternDemo {
+  void main()
+}
+
+@enduml
