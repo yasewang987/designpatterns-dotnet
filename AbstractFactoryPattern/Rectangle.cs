@@ -5,7 +5,7 @@ namespace DesignPatterns.AbstractFactoryPattern
     {
         public void draw()
         {
-            Console.WriteLine($"Draw Rectangle - Factory");
+            Console.WriteLine($"Draw Rectangle");
         }
     }
 }

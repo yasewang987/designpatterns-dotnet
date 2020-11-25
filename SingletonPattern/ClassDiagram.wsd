@@ -1,0 +1,18 @@
+@startuml Singleton Pattern
+
+class SingletonObject
+{
+  SingletonObject instance
+
+  private SingletonObject()
+  SingletonObject getInstance()
+  void showMessage()
+}
+
+SingletonPatternDemo --> SingletonObject : ask
+class SingletonPatternDemo
+{
+  void main()
+}
+
+@enduml

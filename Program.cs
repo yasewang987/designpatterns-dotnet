@@ -16,6 +16,11 @@ namespace DesignPatterns
             AbstractFactoryPattern.AbstractFactoryPatternDemo.Run();
             Console.WriteLine($"Abstract Factory Pattern End ------------\n");
 
+            // 单例模式
+            Console.WriteLine($"Singleton Pattern Start ------------");
+            SingletonPattern.SingletonPatternDemo.Run();
+            Console.WriteLine($"Singleton Pattern End ------------\n");
+
             // 观察者模式
             Console.WriteLine($"Observer Pattern Start ------------");
             ObserverPattern.ObserverPatternDemo.Run();
