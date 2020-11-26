@@ -1,0 +1,51 @@
+@startuml Builder Pattern
+
+interface Packing {}
+
+Packing <-- Wapper : implements
+class Wapper {}
+Packing <-- Bottle : implements
+class Bottle {}
+
+interface Item {
+  string name()
+  Packing packing()
+  float price()
+}
+
+Item <-- Burger : imlements
+Burger -> Packing : use
+abstract class Burger {}
+Burger <-- VegBurger : extends
+class VegBurger {}
+Burger <-- ChickenBurger
+class ChickenBurger {}
+
+Item <-- ColdDrink: implements
+Packing <- ColdDrink : use
+abstract class ColdDrink {}
+ColdDrink <-- Pepsi : extends
+class Pepsi {}
+ColdDrink <-- Coke : extends
+class Coke {}
+
+Item <- Meal : use
+class Meal {
+  ArrayList<Item> items
+  void addItem(Item item)
+  float getCost()
+  void showItems()
+}
+
+Meal <- MealBuilder : build
+class MealBuilder {
+  Meal prepareVegMeal()
+  Meal prepareChickenMeal()
+}
+
+MealBuilder <-- BuilderPatternDemo : ask
+class BuilderPatternDemo {
+  void run()
+}
+
+@enduml

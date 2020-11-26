@@ -21,6 +21,11 @@ namespace DesignPatterns
             SingletonPattern.SingletonPatternDemo.Run();
             Console.WriteLine($"Singleton Pattern End ------------\n");
 
+            // 建造者模式
+            Console.WriteLine($"Builder Pattern Start ------------");
+            BuilderPattern.BuilderPatternDemo.Run();
+            Console.WriteLine($"Builder Pattern End ------------\n");
+
             // 观察者模式
             Console.WriteLine($"Observer Pattern Start ------------");
             ObserverPattern.ObserverPatternDemo.Run();
