@@ -1,0 +1,33 @@
+@startuml Prototype Pattern
+package shape <<rectangle>> {
+    abstract class Shape {
+        String id
+        String type
+        String getType()
+        String getId()
+        void setId()
+        Object Clone()
+    }
+
+    Shape <-- Circle : extends
+    class Circle
+
+    Shape <-- Rectangle : extends
+    class Rectangle
+
+    Shape <-- Square : extends
+    class Square
+}
+
+shape <- ShapeCache : clone
+class ShapeCache {
+    HashMap shapeMap
+    Shape getShape()
+    void loadCache()
+}
+
+ShapeCache <-- PrototypePatternDemo : ask
+class PrototypePatternDemo {
+    void main()
+}
+@enduml
